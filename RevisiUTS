@@ -39,20 +39,22 @@ public class NewClass {
             String test2=in.readLine();
             System.out.print(new String(test2)+"\n");
             buf=Sin.readLine();
-            nrp="USERNAME:" + buf +"\n";
+            nrp="USERNAME:" + buf;
             out.println(nrp);
+            out.flush();
             String test3=in.readLine();
             System.out.print(new String(test3)+"\n");
-            String test4=in.readLine();
+            while(true)
+            {
+                String test4=in.readLine();
             System.out.print(new String(test4)+"\n");
-            //String test5=in.readLine();
             String[] parts = test4.split(" ");
             String part1 = parts[0]; 
             String part2 = parts[1];
             String part3 = parts[2];
-            System.out.println(part1);
-            System.out.println(part2);
-            System.out.println(part3);
+            //System.out.println(part1);
+            //System.out.println(part2);
+            //System.out.println(part3);
             //String part4 = parts[3];
             //String part5 = parts[4];
             int i=Integer.parseInt(part1);
@@ -60,43 +62,65 @@ public class NewClass {
             if(part2.equals("x"))
             {
                 jwb=i * u;
-                String jawab="Result:"+String.valueOf(jwb)+"\n";
+                String jawab="Result:"+String.valueOf(jwb);
                 out.println(jawab);
-                System.out.print(new String(jawab));
+                System.out.print(new String(jawab)+"\n");
                 out.flush();
                 //System.out.print(jawab.split(":").length);
             }
             else if(part2.equals("+"))
             {
                 jwb=i + u;
-                String jawab="Result:"+String.valueOf(jwb)+"\n";
+                String jawab="Result:"+String.valueOf(jwb);
                 out.println(jawab);
-                System.out.print(new String(jawab));
+                System.out.print(new String(jawab)+"\n");
                 out.flush();
                 //System.out.print(jawab.split(":").length);
             }
             else if(part2.equals("-"))
             {
                 jwb=i - u;
-                String jawab="Result:"+String.valueOf(jwb)+"\n";
+                String jawab="Result:"+String.valueOf(jwb);
                 out.println(jawab);
-                System.out.print(new String(jawab));
+                System.out.print(new String(jawab)+"\n");
                 out.flush();
                 //System.out.print(jawab.split(":").length);
             }
             else
             {
                 jwb=i%u;
-                String jawab="Result:"+String.valueOf(jwb)+"\n";
+                String jawab="Result:"+String.valueOf(jwb);
                 out.println(jawab);
-                System.out.print(new String(jawab));
+                System.out.print(new String(jawab)+"\n");
                 out.flush();
                // System.out.print(jawab.split(":").length);
             }
             String test6=in.readLine();
             System.out.print(new String(test6)+"\n");
+            if(test6.equalsIgnoreCase("hash:"))
+            { break;
+            }
+            /*String[] partz = test6.split(" ");
+            String partz1 = partz[0]; 
+            String partz2 = partz[1];
+            */
+            }
+            String test8=in.readLine();
+            System.out.print(new String(test8)+"\n");
+            String test9=in.readLine();
+            System.out.print(new String(test9)+"\n");
+            out.println(new String("HASH:"+test9));
+            String test10=in.readLine();
+            System.out.print(new String(test10)+"\n");
+          
         } catch (IOException ex) {
             Logger.getLogger(NewClass.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
+
+/*String test7=in.readLine();
+            System.out.print(new String(test7)+"\n");
+            String test8=in.readLine();
+            System.out.print(new String(test8)+"\n");
+*/
