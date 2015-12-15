@@ -60,36 +60,41 @@ public class NewClass {
             if(part2.equals("x"))
             {
                 jwb=i * u;
-                String jawab="Result:"+jwb+"\n";
+                String jawab="Result:"+String.valueOf(jwb)+"\n";
                 out.println(jawab);
                 System.out.print(new String(jawab));
+                out.flush();
+                //System.out.print(jawab.split(":").length);
             }
             else if(part2.equals("+"))
             {
                 jwb=i + u;
-                String jawab="Result:"+jwb+"\n";
+                String jawab="Result:"+String.valueOf(jwb)+"\n";
                 out.println(jawab);
                 System.out.print(new String(jawab));
+                out.flush();
+                //System.out.print(jawab.split(":").length);
             }
             else if(part2.equals("-"))
             {
                 jwb=i - u;
-                String jawab="Result:"+jwb+"\n";
+                String jawab="Result:"+String.valueOf(jwb)+"\n";
                 out.println(jawab);
                 System.out.print(new String(jawab));
+                out.flush();
+                //System.out.print(jawab.split(":").length);
             }
             else
             {
                 jwb=i%u;
-                String jawab="Result:"+jwb+"\n";
+                String jawab="Result:"+String.valueOf(jwb)+"\n";
                 out.println(jawab);
                 System.out.print(new String(jawab));
+                out.flush();
+               // System.out.print(jawab.split(":").length);
             }
             String test6=in.readLine();
             System.out.print(new String(test6)+"\n");
-            //os.close();
-            //is.close();
-            //socket.close();
         } catch (IOException ex) {
             Logger.getLogger(NewClass.class.getName()).log(Level.SEVERE, null, ex);
         }
