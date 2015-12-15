@@ -1,0 +1,97 @@
+package UTS;
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+public class NewClass {
+
+    /**5
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        try {
+            int jwb;
+            //byte[] buf = new byte[10];
+            String buf;
+             BufferedReader in;
+             PrintWriter out;
+            String nrp;
+            //byte[] len = new byte[10];
+            
+            Socket socket = new Socket("10.151.43.147", 6666);
+            InputStream is = socket.getInputStream();
+            OutputStream os = socket.getOutputStream();
+             in = new BufferedReader(new InputStreamReader(is));
+             out = new PrintWriter(new OutputStreamWriter(os), true);
+             BufferedReader Sin = new BufferedReader(new InputStreamReader(System.in));
+            String test=in.readLine();
+            System.out.print(new String(test)+"\n");
+            String test2=in.readLine();
+            System.out.print(new String(test2)+"\n");
+            buf=Sin.readLine();
+            nrp="USERNAME:" + buf +"\n";
+            out.println(nrp);
+            String test3=in.readLine();
+            System.out.print(new String(test3)+"\n");
+            String test4=in.readLine();
+            System.out.print(new String(test4)+"\n");
+            //String test5=in.readLine();
+            String[] parts = test4.split(" ");
+            String part1 = parts[0]; 
+            String part2 = parts[1];
+            String part3 = parts[2];
+            System.out.println(part1);
+            System.out.println(part2);
+            System.out.println(part3);
+            //String part4 = parts[3];
+            //String part5 = parts[4];
+            int i=Integer.parseInt(part1);
+            int u=Integer.parseInt(part3);
+            if(part2.equals("x"))
+            {
+                jwb=i * u;
+                String jawab="Result:"+jwb+"\n";
+                out.println(jawab);
+                System.out.print(new String(jawab));
+            }
+            else if(part2.equals("+"))
+            {
+                jwb=i + u;
+                String jawab="Result:"+jwb+"\n";
+                out.println(jawab);
+                System.out.print(new String(jawab));
+            }
+            else if(part2.equals("-"))
+            {
+                jwb=i - u;
+                String jawab="Result:"+jwb+"\n";
+                out.println(jawab);
+                System.out.print(new String(jawab));
+            }
+            else
+            {
+                jwb=i%u;
+                String jawab="Result:"+jwb+"\n";
+                out.println(jawab);
+                System.out.print(new String(jawab));
+            }
+            String test6=in.readLine();
+            System.out.print(new String(test6)+"\n");
+            //os.close();
+            //is.close();
+            //socket.close();
+        } catch (IOException ex) {
+            Logger.getLogger(NewClass.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
